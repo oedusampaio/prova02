@@ -1,0 +1,192 @@
+/* Importação de fontes do Google Fonts para um visual moderno e consistente */
+@import url('https://fonts.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
+
+/* Reset básico para consistência entre navegadores */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e limpa */
+    /* Mesmo gradiente suave de azul claro para verde claro do cadastro */
+    background: linear-gradient(to right, #e0f2f7, #c5e1a5);
+    display: flex;
+    justify-content: center; /* Centraliza o container horizontalmente */
+    align-items: center; /* Centraliza o container verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    padding: 20px;
+    color: #333; /* Cor de texto padrão */
+}
+
+/* --- Container Principal do Formulário de Login --- */
+.container {
+    background: #ffffff; /* Fundo branco, igual ao cadastro */
+    width: 100%;
+    max-width: 420px; /* Largura ideal para o formulário */
+    padding: 40px; /* Mais preenchimento interno */
+    border-radius: 12px; /* Cantos arredondados, igual ao cadastro */
+    /* Sombra suave e mais pronunciada, igual ao cadastro */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Efeitos de transição */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Leve elevação no hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Sombra um pouco mais forte no hover */
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif; /* Fonte para títulos */
+    color: #2e7d32; /* Verde mais escuro, remete à esperança/natureza */
+    margin-bottom: 35px; /* Mais espaço abaixo do título */
+    font-size: 2.8em; /* Tamanho do título grande e impactante */
+    font-weight: 700; /* Mais peso */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.08); /* Sombra de texto suave */
+}
+
+/* --- Estilos para Inputs --- */
+input {
+    width: calc(100% - 24px); /* Ajusta para padding e borda */
+    padding: 15px; /* Mais padding para campos maiores */
+    margin: 18px auto; /* Mais margem vertical */
+    border: 1px solid #c8e6c9; /* Borda verde claro */
+    border-radius: 8px; /* Cantos arredondados */
+    font-size: 1.1em; /* Fonte ligeiramente maior */
+    color: #555;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #4caf50; /* Verde mais forte ao focar */
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.25); /* Sombra de foco sutil e mais visível */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* --- Estilos para Botões --- */
+button {
+    background-color: #4caf50; /* Verde vibrante, mesma cor do cadastro */
+    color: white;
+    padding: 16px 35px; /* Mais padding para um botão maior e mais convidativo */
+    margin-top: 30px; /* Mais espaço acima do botão */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3em; /* Botão ainda maior */
+    font-weight: 600;
+    letter-spacing: 0.8px; /* Mais espaçamento entre letras */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra para botões */
+}
+
+button:hover {
+    background-color: #388e3c; /* Verde mais escuro no hover */
+    transform: translateY(-4px); /* Leve levantamento mais notável */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
+button:active {
+    transform: translateY(0); /* Volta ao normal ao clicar */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilo para o Link de Cadastro --- */
+p {
+    margin-top: 25px; /* Espaço acima do parágrafo */
+    font-size: 1em;
+    color: #666;
+}
+
+p a {
+    color: #007bff; /* Azul vibrante para o link */
+    text-decoration: none; /* Remove sublinhado padrão */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #0056b3; /* Azul mais escuro no hover */
+    text-decoration: underline; /* Sublinhado no hover */
+}
+
+/* --- Mensagem de Erro (se você for adicionar no JS) --- */
+.error-message {
+    color: #d32f2f; /* Vermelho para erro */
+    font-size: 0.9em;
+    margin-top: 15px;
+    display: none; /* Oculta por padrão, será exibida via JS */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px;
+        margin: 20px; /* Margem para evitar que o container grude nas bordas em telas menores */
+    }
+
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 25px;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    button {
+        padding: 14px 28px;
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
+
+    p {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input {
+        margin: 10px auto;
+    }
+}
+.hidden {
+    display: none !important;
+}
+
+.error-message {
+    color: #d32f2f; /* Vermelho para erro */
+    font-size: 0.9em;
+    margin-top: 15px;
+    /* display: none; */ /* Pode ser oculto por padrão no CSS ou manipulado 100% pelo JS */
+}
+.countdown-timer {
+    font-family: 'Roboto', sans-serif; /* Usando uma fonte mais robusta */
+    font-size: 2em; /* Tamanho maior para destaque */
+    font-weight: 700; /* Negrito */
+    color: #4CAF50; /* Cor verde para combinar com o tema */
+    margin-bottom: 25px; /* Espaço abaixo do relógio */
+    padding: 10px 15px;
+    border: 2px solid #81C784; /* Borda sutil */
+    border-radius: 8px;
+    background-color: #E8F5E9; /* Fundo levemente verde */
+    display: inline-block; /* Para que a borda se ajuste ao conteúdo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Opcional: Estilo para quando o tempo estiver acabando (se você quiser) */
+.countdown-timer.warning {
+    color: #EF5350; /* Vermelho */
+    border-color: #D32F2F;
+    background-color: #FFEBEE;
+}

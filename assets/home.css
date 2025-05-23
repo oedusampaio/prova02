@@ -1,0 +1,325 @@
+@import url('https://fonts.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
+
+/* Reset básico para consistência entre navegadores */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #e0f2f7, #c5e1a5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Header Principal --- */
+.main-header {
+    background-color: #2e7d32;
+    color: white;
+    width: 100%;
+    padding: 20px 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content {
+    margin-bottom: 20px;
+}
+
+.main-header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.main-header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* --- Navegação no Header (links transformados em botões) --- */
+.main-nav {
+    width: 100%;
+    background-color: #388e3c;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav .nav-button { /* ESTILOS PARA OS LINKS "Login" e "Cadastro" */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none; /* Links não tem borda por padrão, mas para consistência */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+    display: inline-block; /* Permite aplicar padding, width etc. */
+    text-align: center; /* Centraliza o texto */
+}
+
+.main-nav .nav-button:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Container Principal (Centralizado) --- */
+.main-container {
+    background: #ffffff;
+    max-width: 900px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* --- Seção de Ações (Botões: Lista de Voluntários, Sair) --- */
+.action-section {
+    margin-bottom: 40px;
+}
+
+.action-section h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #4CAF50;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+.buttons-group {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* --- Estilos Comuns de Botões (ações primárias - para <button> tags) --- */
+/* Este seletor agora se aplica apenas aos <button> da .action-section */
+.action-section button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.action-section button:hover {
+    background-color: #388E3C;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.action-section button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo específico para o botão de sair */
+#logoutBtn {
+    background-color: #ef5350;
+}
+
+#logoutBtn:hover {
+    background-color: #d32f2f;
+}
+
+/* --- Seção de Lista de Voluntários --- */
+.volunteers-list-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.volunteers-list-section h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #2e7d32;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: auto;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #81C784;
+    box-shadow: 0 0 0 6px rgba(129, 199, 132, 0.3);
+}
+
+.card h3 {
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0;
+    color: #424242;
+    font-size: 1.6em;
+    word-break: break-word;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.card p strong {
+    color: #444;
+}
+
+.card .delete-button {
+    background-color: #ef5350;
+    margin-top: 15px;
+    padding: 10px 18px;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.card .delete-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+.info-message {
+    color: #777;
+    font-size: 1.1em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Footer --- */
+.main-footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 20px 15px 0;
+    }
+    .main-header h1 {
+        font-size: 2.2em;
+    }
+    .main-header p {
+        font-size: 1em;
+    }
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+        border-radius: 0 0 8px 8px;
+    }
+    .main-nav .nav-button { /* Seletor para links de navegação */
+        width: 100%;
+    }
+    .main-container {
+        margin: 20px auto;
+        padding: 25px;
+    }
+    .action-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .buttons-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .action-section button { /* Seletor para botões de ação */
+        width: 100%;
+        font-size: 1.1em;
+    }
+    .volunteers-list-section h3 {
+        font-size: 1.8em;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 20px 15px;
+    }
+    .main-header h1 {
+        font-size: 1.8em;
+    }
+    .main-container {
+        padding: 20px;
+    }
+    .action-section h2 {
+        font-size: 1.5em;
+    }
+    .volunteers-list-section h3 {
+        font-size: 1.5em;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial | Voluntariado</title>
+    <link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Seja Bem-vindo(a) ao Voluntariado!</h1>
+            <p id="welcomeMessage">Olá, Voluntário(a)! Sua dedicação faz a diferença.</p>
+        </div>
+        <nav class="main-nav">
+            <a href="login.html" class="nav-button">Login</a>
+            <a href="cadastro.html" class="nav-button">Cadastro</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="action-section">
+            <h2>O que você gostaria de fazer?</h2>
+            <div class="buttons-group">
+                <button id="listVolunteersBtn" onclick="exibirVoluntarios()">Lista de Voluntários</button>
+                <button id="logoutBtn" onclick="fazerLogout()">Sair</button>
+            </div>
+        </section>
+
+        <section class="volunteers-list-section hidden" id="volunteersListSection">
+            <h3>Voluntários Cadastrados</h3>
+            <div class="cards-grid" id="cardsContainerHome">
+                </div>
+            <p id="noVolunteersMessage" class="info-message hidden">Nenhum voluntário cadastrado ainda.</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Projeto Voluntariado. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

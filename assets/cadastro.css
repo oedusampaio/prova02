@@ -1,0 +1,281 @@
+/* Importação de fontes do Google Fonts para um visual mais moderno e consistente */
+@import url('https://fonts.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
+
+/* Reset básico para consistência entre navegadores */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte mais moderna e limpa */
+    /* Gradiente suave de azul claro para verde claro, consistente com o login */
+    background: linear-gradient(to right, #e0f2f7, #c5e1a5);
+    display: flex;
+    flex-direction: column; /* Organiza formulário e cards em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    padding: 30px 20px; /* Preenchimento para evitar que o conteúdo toque as bordas */
+    color: #333; /* Cor de texto padrão */
+    line-height: 1.6; /* Melhor legibilidade */
+}
+
+/* --- Container Principal do Formulário --- */
+.container {
+    background: #ffffff; /* Fundo branco para o formulário */
+    max-width: 500px; /* Um pouco maior para acomodar mais campos e um visual mais espaçoso */
+    width: 100%; /* Garante que ocupe a largura disponível em telas menores */
+    margin-bottom: 40px; /* Mais espaço entre o formulário e os cards */
+    padding: 40px; /* Mais preenchimento */
+    border-radius: 12px; /* Cantos mais arredondados, consistente com o login */
+    /* Sombra mais pronunciada e suave, consistente com o login */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Efeito ao focar no container */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Sombra um pouco mais forte no hover */
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif; /* Fonte para títulos */
+    color: #2e7d32; /* Verde mais escuro, remete à esperança/natureza */
+    margin-bottom: 35px; /* Mais espaço abaixo do título */
+    font-size: 2.8em; /* Tamanho de título mais impactante, consistente com o login */
+    font-weight: 700; /* Mais peso */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.08); /* Sombra de texto suave */
+}
+
+/* --- Estilos para Inputs --- */
+input[type="text"],
+input[type="email"],
+input[type="password"] { /* Adicionado input type="password" */
+    width: calc(100% - 24px); /* Ajusta para padding e borda */
+    padding: 15px; /* Mais padding para campos maiores */
+    margin: 15px auto; /* Margem vertical consistente */
+    border: 1px solid #c8e6c9; /* Borda verde claro */
+    border-radius: 8px; /* Cantos arredondados */
+    font-size: 1.1em; /* Fonte ligeiramente maior */
+    color: #555;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #4caf50; /* Verde mais forte ao focar */
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.25); /* Sombra de foco sutil e mais visível */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Estilo para campo de Endereço (somente leitura) */
+#endereco {
+    background-color: #f0f4c3; /* Fundo amarelado suave para indicar somente leitura */
+    cursor: not-allowed; /* Cursor de "proibido" */
+    color: #6a6a6a;
+    font-style: italic;
+}
+
+/* --- Estilos para Botões --- */
+button {
+    background-color: #4caf50; /* Verde vibrante, consistente com o login */
+    color: white;
+    padding: 16px 35px; /* Mais padding para um botão maior e mais convidativo */
+    margin: 15px 10px; /* Espaço entre botões */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3em; /* Botão ainda maior, consistente com o login */
+    font-weight: 600;
+    letter-spacing: 0.8px; /* Mais espaçamento entre letras */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra para botões */
+}
+
+button:hover {
+    background-color: #388e3c; /* Verde mais escuro no hover */
+    transform: translateY(-4px); /* Leve levantamento mais notável */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
+button:active {
+    transform: translateY(0); /* Volta ao normal ao clicar */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Mensagem de Sucesso (ajustado para ser manipulado por JS) --- */
+p#msg.success-message {
+    display: none; /* Inicia oculto, será exibido pelo JS */
+    background-color: #e6ffed; /* Fundo verde claro */
+    color: #2e7d32; /* Texto verde escuro */
+    border: 1px solid #a5d6a7;
+    padding: 15px; /* Mais padding */
+    border-radius: 8px;
+    margin-top: 25px; /* Mais margem */
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Botão "Ir para o Login" (NOVO) --- */
+#goToLoginBtn {
+    background-color: #007bff; /* Azul vibrante, para destacar a ação */
+    margin-top: 25px; /* Mais espaço acima do botão */
+    padding: 16px 35px; /* Consistente com outros botões */
+    font-size: 1.3em; /* Consistente com outros botões */
+    /* Outros estilos de botão base serão herdados */
+}
+
+#goToLoginBtn:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Classe para esconder elementos (USADA PELO JS) --- */
+.hidden {
+    display: none !important; /* Importante para garantir que o display seja sobrescrito */
+}
+
+/* --- Estilo para a Seção de Cards --- */
+.cards {
+    max-width: 1000px; /* Mais largura para os cards */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Mais espaço entre os cards */
+    padding: 20px 0; /* Preenchimento superior e inferior */
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra mais suave e espalhada */
+    width: 300px; /* Um pouco mais largo para melhor apresentação */
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-8px); /* Efeito de "levantar" mais notável */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+}
+
+.card img {
+    width: 120px; /* Tamanho da imagem maior */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+    margin-bottom: 20px;
+    border: 4px solid #81c784; /* Borda verde suave na imagem */
+    box-shadow: 0 0 0 6px rgba(129, 199, 132, 0.3); /* Anel externo sutil */
+}
+
+.card h3 {
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0;
+    color: #424242; /* Cor mais escura para o nome */
+    font-size: 1.6em;
+    word-break: break-word; /* Quebra texto longo */
+}
+
+.card p {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    word-break: break-word; /* Quebra texto longo */
+}
+
+.card p strong {
+    color: #444; /* Destaca os títulos das informações */
+}
+
+.card .delete-button {
+    background-color: #ef5350; /* Vermelho vibrante para exclusão */
+    margin-top: 15px;
+    padding: 10px 18px;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.card .delete-button:hover {
+    background-color: #d32f2f; /* Vermelho mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+/* --- Responsividade Básica --- */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 30px; /* Ajuste para telas menores */
+    }
+
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    input, button {
+        padding: 12px;
+        font-size: 1.1em;
+    }
+
+    .cards {
+        gap: 20px; /* Ajuste para telas menores */
+        padding: 15px 10px;
+    }
+
+    .card {
+        width: calc(100% - 40px); /* Ocupa quase a largura total em telas pequenas */
+        max-width: 320px; /* Limita a largura em telas intermediárias */
+        padding: 20px;
+    }
+
+    .card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card h3 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    input, button {
+        margin: 10px auto;
+        font-size: 1em;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+
+    .card {
+        width: 100%; /* Ocupa a largura total em telas muito pequenas */
+        margin-bottom: 15px;
+    }
+}

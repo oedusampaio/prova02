@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Voluntário</title>
+    <link rel="stylesheet" href="assets/cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Voluntário</h2>
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <input type="text" id="cep" placeholder="CEP" maxlength="8" required>
+        <input type="text" id="endereco" placeholder="Endereço" readonly>
+        <button onclick="cadastrarVoluntario()">Cadastrar</button>
+
+        <p id="msg" class="success-message">Cadastro realizado com sucesso!</p>
+        <button id="goToLoginBtn" class="hidden">Ir para o Login</button>
+        <button onclick="voltar()">Voltar</button>
+    </div>
+
+    <div class="cards" id="cardsContainer">
+        </div>
+
+    <script src="js/cadastro.js"></script>
+</body>
+</html>
